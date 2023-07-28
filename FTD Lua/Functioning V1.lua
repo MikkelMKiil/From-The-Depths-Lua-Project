@@ -1,8 +1,3 @@
-require("I")
-require("Mathf")
-require("Vector3")
-require("Quaternion")
-
 AllowedError = 1;
 -- Increase this if you are using massive height offsets!
 ExplosionHeightOffset = 100;
