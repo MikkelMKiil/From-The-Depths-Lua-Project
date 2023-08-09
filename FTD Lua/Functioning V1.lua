@@ -18,7 +18,6 @@ function Update(I)
     if I:GetTargetInfo(SelectedMainframe, 0).Id > 0 then
         local EnemyInfo = I:GetTargetInfo(SelectedMainframe, 0)
         local WeaponInfo = I:GetWeaponInfo(SelectedWeapon)
-        local EnemyRelative = EnemyInfo.Position - WeaponInfo.GlobalFirePoint
         local PredictedPosition = EnemyInfo.Position - WeaponInfo.GlobalFirePoint + (EnemyInfo.Velocity * EnemyInfo.Position.magnitude / WeaponInfo.Speed)
         local BulletDropAirburstOffset = PredictedPosition.y + (0.5 * 9.81 * math.pow(PredictedPosition.magnitude / WeaponInfo.Speed, 2)) + ExplosionHeightOffset
         local SetFuseTime = I:Component_SetFloatLogic(13, SelectedWeapon, PredictedPosition.magnitude / WeaponInfo.Speed)
